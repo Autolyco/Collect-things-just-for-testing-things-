@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 
 var movement : Vector2
-const speed = 150
+const speed = 450
 
 
 func _ready():
