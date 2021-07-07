@@ -6,8 +6,18 @@ var movement : Vector2
 const speed = 450
 
 
+export var debug_mod:bool
+
+
 func _ready():
 	print("Player has spawned")
+	
+	print("Debug mod : " + str(debug_mod))
+	
+	if debug_mod:
+		$CanvasLayer/Interface/debug_state_input.visible = true
+	else :
+		$CanvasLayer/Interface/debug_state_input.visible = false
 
 
 func _physics_process(delta):

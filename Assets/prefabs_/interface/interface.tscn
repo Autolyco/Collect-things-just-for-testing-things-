@@ -15,7 +15,6 @@ margin_top = 14.0
 margin_right = 16.0
 margin_bottom = 14.0
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -37,10 +36,10 @@ __meta__ = {
 }
 
 [node name="lbl_current_input" type="Label" parent="debug_state_input"]
-margin_left = 496.0
+margin_left = 896.0
 margin_top = 2.0
-margin_right = 645.0
-margin_bottom = 16.0
+margin_right = 1045.0
+margin_bottom = 33.0
 text = "CURRENT INPUT 
 "
 __meta__ = {
