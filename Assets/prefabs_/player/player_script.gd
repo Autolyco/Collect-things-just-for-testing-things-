@@ -5,11 +5,14 @@ extends KinematicBody2D
 var movement : Vector2
 const speed = 450
 
+var score:int = 0
 
 export var debug_mod:bool
 
 
 func _ready():
+	
+	
 	print("Player has spawned")
 	
 	print("Debug mod : " + str(debug_mod))
@@ -30,8 +33,49 @@ func _physics_process(delta):
 	movement.x = speed * dirx
 	movement.y = speed * diry
 	
-#	print(movement)
+	_debug_mod()
+	
+	$CanvasLayer/Interface/UI/lbl_score_value.text = str(score)
+	
+	
 	
 	movement = move_and_slide(movement)
+
+func _add_score():
+	score += 10
+
+
+
+
+
+
+
+
+
+
+
+func _debug_mod():
 	
+	$CanvasLayer/Interface/debug_state_input/positions_elements/lbl_global_position.text = str(self.global_position)
+	$CanvasLayer/Interface/debug_state_input/positions_elements/lbl_vector_position.text = str(movement)
+	
+	if Input.is_action_just_pressed("ui_right"):
+		$CanvasLayer/Interface/debug_state_input/input_elements/lbl_right.visible = true
+	elif Input.is_action_just_released("ui_right"):
+		$CanvasLayer/Interface/debug_state_input/input_elements/lbl_right.visible = false
+	
+	if Input.is_action_just_pressed("ui_left"):
+		$CanvasLayer/Interface/debug_state_input/input_elements/lbl_left.visible = true
+	elif Input.is_action_just_released("ui_left"):
+		$CanvasLayer/Interface/debug_state_input/input_elements/lbl_left.visible = false
+	
+	if Input.is_action_just_pressed("ui_up"):
+		$CanvasLayer/Interface/debug_state_input/input_elements/lbl_up.visible = true
+	elif Input.is_action_just_released("ui_up"):
+		$CanvasLayer/Interface/debug_state_input/input_elements/lbl_up.visible = false
+	
+	if Input.is_action_just_pressed("ui_down"):
+		$CanvasLayer/Interface/debug_state_input/input_elements/lbl_down.visible = true
+	elif Input.is_action_just_released("ui_down"):
+		$CanvasLayer/Interface/debug_state_input/input_elements/lbl_down.visible = false
 	

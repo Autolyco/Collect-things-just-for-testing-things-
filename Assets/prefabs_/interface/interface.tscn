@@ -1,4 +1,13 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/others_/fonts_/Minecraft.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Stance"
 
 [node name="Interface" type="Control"]
 anchor_right = 1.0
@@ -8,6 +17,7 @@ __meta__ = {
 }
 
 [node name="debug_state_input" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 0.16
 margin_left = 16.0
@@ -27,20 +37,87 @@ __meta__ = {
 }
 
 [node name="lbl_vector" type="Label" parent="debug_state_input"]
-margin_top = 48.0
-margin_right = 121.0
-margin_bottom = 62.0
+margin_top = 40.0
+margin_right = 149.0
+margin_bottom = 54.0
 text = "VECTOR OF THE PLAYER"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="lbl_current_input" type="Label" parent="debug_state_input"]
-margin_left = 848.0
-margin_right = 997.0
+margin_left = 816.0
+margin_right = 965.0
 margin_bottom = 31.0
 text = "CURRENT INPUT 
 "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="input_elements" type="Control" parent="debug_state_input"]
+anchor_left = 0.734
+anchor_top = 0.187
+anchor_right = 0.984
+anchor_bottom = 0.854
+margin_left = 0.383972
+margin_top = 0.0480003
+margin_right = 0.383972
+margin_bottom = 0.0159988
+
+[node name="lbl_right" type="Label" parent="debug_state_input/input_elements"]
+visible = false
+margin_left = 64.0
+margin_top = 13.0
+margin_right = 128.0
+margin_bottom = 43.0
+text = "RIGHT"
+
+[node name="lbl_left" type="Label" parent="debug_state_input/input_elements"]
+visible = false
+margin_left = 16.0
+margin_top = 13.0
+margin_right = 56.0
+margin_bottom = 27.0
+text = "LEFT"
+
+[node name="lbl_up" type="Label" parent="debug_state_input/input_elements"]
+visible = false
+margin_left = 128.0
+margin_top = 13.0
+margin_right = 168.0
+margin_bottom = 27.0
+text = "UP"
+
+[node name="lbl_down" type="Label" parent="debug_state_input/input_elements"]
+visible = false
+anchor_left = 6.8
+anchor_top = 1.55
+anchor_right = 14.0
+anchor_bottom = 1.55
+margin_left = -1572.8
+margin_top = -86.2
+margin_right = -3368.0
+margin_bottom = -38.2
+text = "DOWN"
+
+[node name="positions_elements" type="Control" parent="debug_state_input"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="lbl_global_position" type="Label" parent="debug_state_input/positions_elements"]
+margin_left = 176.0
+margin_right = 216.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl_vector_position" type="Label" parent="debug_state_input/positions_elements"]
+margin_left = 176.0
+margin_top = 40.0
+margin_right = 216.0
+margin_bottom = 54.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -71,3 +148,34 @@ text = "LOAD"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="UI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.155
+margin_bottom = 3.0
+
+[node name="lbl_score" type="Label" parent="UI"]
+margin_left = 432.0
+margin_top = 14.0
+margin_right = 609.0
+margin_bottom = 62.0
+custom_fonts/font = SubResource( 1 )
+text = "SCORE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl_score_value" type="Label" parent="UI"]
+margin_left = 352.0
+margin_top = 68.0
+margin_right = 688.0
+margin_bottom = 116.0
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+anims/Stance = SubResource( 2 )

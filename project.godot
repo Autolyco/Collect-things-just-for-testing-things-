@@ -18,6 +18,17 @@ config/icon="res://icon.png"
 
 DataManager="*res://Assets/global_scripts_/data_manager.gd"
 
+[debug]
+
+settings/fps/force_fps=60
+
+[display]
+
+window/size/resizable=false
+window/size/borderless=true
+window/vsync/use_vsync=false
+window/stretch/aspect="keep"
+
 [global]
 
 ba=false

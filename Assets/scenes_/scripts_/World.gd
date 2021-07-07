@@ -1,20 +1,39 @@
 extends Node2D
 
 
-var player = load("res://Assets/prefabs_/player/player.tscn")
-var items
 
 
-var score:int 
+var item = load("res://Assets/prefabs_/items/coins.tscn")
+
 
 
 
 func _ready():
 	pass
 
-func _process(delta):
+
+
+func _add_score():
 	pass
 
 
 func _spawn_item_logic():
-	pass
+	
+	randomize()
+	var map_x = rand_range(128,1152)
+	var map_y = rand_range(128,912)
+	
+	var i = item.instance()
+	i.global_position.x = map_x
+	i.global_position.y = map_y
+	add_child(i)
+
+
+func _on_timer_spawn_item_timeout():
+	randomize()
+	
+	var timer_value = rand_range(0,2)
+	print(timer_value)
+	
+	_spawn_item_logic()
+	$timer_spawn_item.start(float(timer_value))
