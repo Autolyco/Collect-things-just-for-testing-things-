@@ -2,11 +2,19 @@ extends Node2D
 
 
 var player = load("res://Assets/prefabs_/player/player.tscn")
+var items
+
+
+var score:int 
+
 
 
 func _ready():
-	
-	print('Initalized player')
-	var p = player.instance()
-	p.global_position = Vector2(448,704)
-	self.add_child(p)
+	pass
+
+func _process(delta):
+	pass
+
+
+func _spawn_item_logic():
+	pass
