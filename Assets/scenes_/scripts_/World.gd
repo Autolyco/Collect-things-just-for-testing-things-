@@ -33,7 +33,6 @@ func _on_timer_spawn_item_timeout():
 	randomize()
 	
 	var timer_value = rand_range(0,2)
-	print(timer_value)
 	
 	_spawn_item_logic()
 	$timer_spawn_item.start(float(timer_value))

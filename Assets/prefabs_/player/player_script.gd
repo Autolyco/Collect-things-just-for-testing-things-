@@ -12,12 +12,13 @@ export var debug_mod:bool
 
 func _ready():
 	
+	print(DataManager.save_data())
 	
 	_interface_animations()
 	
-	print("Player has spawned")
-	
-	print("Debug mod : " + str(debug_mod))
+#	print("Player has spawned")
+#
+#	print("Debug mod : " + str(debug_mod))
 	
 	if debug_mod:
 		$CanvasLayer/Interface/debug_state_input.visible = true
