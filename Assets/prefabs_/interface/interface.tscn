@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/others_/fonts_/Minecraft.ttf" type="DynamicFontData" id=1]
 
@@ -6,8 +6,154 @@
 size = 48
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=6]
+size = 48
+font_data = ExtResource( 1 )
+
 [sub_resource type="Animation" id=2]
 resource_name = "Stance"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("UI/lbl_score:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1.07178, 0.812253 ),
+"update": 0,
+"values": [ Vector2( 432, 28 ), Vector2( 432, 24 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("UI/lbl_score:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1.07177, 1.56917 ),
+"update": 0,
+"values": [ -2.0, 2.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Stance_score"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("UI/lbl_score_value:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 352, 80 ), Vector2( 352, 85 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("UI/lbl_score_value:rect_rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 2.0, -2.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Stance"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("UI/lbl_score:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1.07178, 0.812253 ),
+"update": 0,
+"values": [ Vector2( 432, 28 ), Vector2( 432, 24 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("UI/lbl_score:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1.07177, 1.56917 ),
+"update": 0,
+"values": [ -2.0, 2.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Stance_score"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("UI/lbl_score_value:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 352, 80 ), Vector2( 352, 85 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("UI/lbl_score_value:rect_rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 2.0, -2.0 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "new_score_effect"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("UI/lbl_score_value:custom_fonts/font:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 48, 80, 48 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("UI/lbl_score_value:custom_colors/font_color")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.09, 0.13, 0.17, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 0.921569, 0.0313726, 0.760784, 1 ), Color( 0, 0.956863, 0.12549, 1 ), Color( 1, 0.654902, 0, 1 ), Color( 0, 1, 0.952941, 1 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Interface" type="Control"]
 anchor_right = 1.0
@@ -156,9 +302,10 @@ margin_bottom = 3.0
 
 [node name="lbl_score" type="Label" parent="UI"]
 margin_left = 432.0
-margin_top = 14.0
+margin_top = 27.0142
 margin_right = 609.0
-margin_bottom = 62.0
+margin_bottom = 75.0149
+rect_rotation = 0.205508
 custom_fonts/font = SubResource( 1 )
 text = "SCORE"
 __meta__ = {
@@ -166,16 +313,29 @@ __meta__ = {
 }
 
 [node name="lbl_score_value" type="Label" parent="UI"]
-margin_left = 352.0
-margin_top = 68.0
-margin_right = 688.0
-margin_bottom = 116.0
-custom_fonts/font = SubResource( 1 )
+margin_left = 335.0
+margin_top = 75.0
+margin_right = 671.0
+margin_bottom = 155.0
+rect_rotation = 2.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "45"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Animation" type="AnimationPlayer" parent="."]
+[node name="animation_score_stance" type="AnimationPlayer" parent="."]
+autoplay = "Stance_score"
 anims/Stance = SubResource( 2 )
+anims/Stance_score = SubResource( 3 )
+
+[node name="animation_score_value_stance" type="AnimationPlayer" parent="."]
+autoplay = "Stance_score"
+anims/Stance = SubResource( 4 )
+anims/Stance_score = SubResource( 5 )
+
+[node name="animation_score_value_effect" type="AnimationPlayer" parent="."]
+anims/new_score_effect = SubResource( 7 )

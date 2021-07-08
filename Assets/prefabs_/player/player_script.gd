@@ -13,6 +13,8 @@ export var debug_mod:bool
 func _ready():
 	
 	
+	_interface_animations()
+	
 	print("Player has spawned")
 	
 	print("Debug mod : " + str(debug_mod))
@@ -43,8 +45,14 @@ func _physics_process(delta):
 
 func _add_score():
 	score += 10
+	
+	$CanvasLayer/Interface/animation_score_value_effect.play("new_score_effect")
+	
 
 
+func _interface_animations():
+	$CanvasLayer/Interface/animation_score_stance.play("Stance")
+	$CanvasLayer/Interface/animation_score_value_stance.play("Stance_score")
 
 
 
