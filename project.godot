@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 DataManager="*res://Assets/global_scripts_/data_manager.gd"
+Player="*res://Assets/prefabs_/player/player.tscn"
 
 [debug]
 

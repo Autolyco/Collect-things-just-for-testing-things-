@@ -1,17 +1,17 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/others_/fonts_/Minecraft.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/prefabs_/interface/_scripts/interface.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=2]
 size = 48
 font_data = ExtResource( 1 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "Stance"
+[sub_resource type="Animation" id=3]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -39,8 +39,7 @@ tracks/1/keys = {
 "values": [ -2.0, 2.0 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Stance_score"
+[sub_resource type="Animation" id=4]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -68,8 +67,7 @@ tracks/1/keys = {
 "values": [ 2.0, -2.0 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "Stance"
+[sub_resource type="Animation" id=5]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -97,8 +95,7 @@ tracks/1/keys = {
 "values": [ -2.0, 2.0 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "Stance_score"
+[sub_resource type="Animation" id=6]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -158,6 +155,7 @@ tracks/1/keys = {
 [node name="Interface" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -318,7 +316,7 @@ margin_top = 75.0
 margin_right = 671.0
 margin_bottom = 155.0
 rect_rotation = 2.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "45"
 align = 1
@@ -329,13 +327,16 @@ __meta__ = {
 
 [node name="animation_score_stance" type="AnimationPlayer" parent="."]
 autoplay = "Stance_score"
-anims/Stance = SubResource( 2 )
-anims/Stance_score = SubResource( 3 )
+anims/Stance = SubResource( 3 )
+anims/Stance_score = SubResource( 4 )
 
 [node name="animation_score_value_stance" type="AnimationPlayer" parent="."]
 autoplay = "Stance_score"
-anims/Stance = SubResource( 4 )
-anims/Stance_score = SubResource( 5 )
+anims/Stance = SubResource( 5 )
+anims/Stance_score = SubResource( 6 )
 
 [node name="animation_score_value_effect" type="AnimationPlayer" parent="."]
 anims/new_score_effect = SubResource( 7 )
+
+[connection signal="pressed" from="save_load_container/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="save_load_container/Button2" to="." method="_on_Button2_pressed"]

@@ -12,8 +12,6 @@ export var debug_mod:bool
 
 func _ready():
 	
-	print(DataManager.save_data())
-	
 	_interface_animations()
 	
 #	print("Player has spawned")
@@ -26,11 +24,19 @@ func _ready():
 		$CanvasLayer/Interface/debug_state_input.visible = false
 
 
+func _data_manager_attributes():
+	DataManager.global_position = self.global_position
+	DataManager.score = self.score
+
 func _physics_process(delta):
+	
+	_data_manager_attributes()
 	
 	var dirx = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	var diry = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 	
+	if dirx or diry != 0:
+		$AnimationPlayer.play("movement")
 	
 	
 	movement.x = speed * dirx
@@ -46,7 +52,6 @@ func _physics_process(delta):
 
 func _add_score():
 	score += 10
-	
 	$CanvasLayer/Interface/animation_score_value_effect.play("new_score_effect")
 	
 
@@ -54,12 +59,6 @@ func _add_score():
 func _interface_animations():
 	$CanvasLayer/Interface/animation_score_stance.play("Stance")
 	$CanvasLayer/Interface/animation_score_value_stance.play("Stance_score")
-
-
-
-
-
-
 
 
 
